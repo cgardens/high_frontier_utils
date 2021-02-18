@@ -110,13 +110,13 @@ public class FuelStepCalculator {
     }
 
     final int thrustModifier;
-    if (dryMassStep.getStep().intValue() < 2) {
+    if (wetMassStep.getStep().intValue() < 2) {
       thrustModifier = 2;
-    } else if (dryMassStep.getStep().intValue() < 5) {
+    } else if (wetMassStep.getStep().intValue() < 5) {
       thrustModifier = 1;
-    } else if (dryMassStep.getStep().intValue() < 9) {
+    } else if (wetMassStep.getStep().intValue() < 9) {
       thrustModifier = 0;
-    } else if (dryMassStep.getStep().intValue() < 17) {
+    } else if (wetMassStep.getStep().intValue() < 17) {
       thrustModifier = -1;
     } else {
       thrustModifier = -2;
@@ -131,7 +131,7 @@ public class FuelStepCalculator {
     final FuelStepCalculator calculator = new FuelStepCalculator();
     printQueryAndResult(calculator, new Query("1", "2", "1"));
     printQueryAndResult(calculator, new Query("23", "32", "1"));
-    printQueryAndResult(calculator, new Query("6", "32", "1"));
+    printQueryAndResult(calculator, new Query("5", "32", "2"));
     printQueryAndResult(calculator, new Query("9", "32", "1"));
     printQueryAndResult(calculator, new Query("9", "12", "1"));
     printQueryAndResult(calculator, new Query("9", "12", "2"));
